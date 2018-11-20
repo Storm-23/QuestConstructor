@@ -108,7 +108,8 @@ namespace QuestInterviewNS
                 pn.Parent = pnAnswers;
             }
 
-            //добавляем кнопку "далее"
+            //настриваем видимость кнопок
+            btBack.Parent = interview.PassedAnswers.Count > 0 ? pnAnswers : null;
             btNext.Parent = interview.IsFinished ? null : pnAnswers;
             btFinish.Parent = interview.IsFinished ? pnAnswers : null;
 
@@ -147,6 +148,14 @@ namespace QuestInterviewNS
             }
             //выходим
             Close();
+        }
+
+        private void btBack_Click(object sender, EventArgs e)
+        {
+            //переходим к пред вопросу
+            interviewManipulator.GoToPrevQuestion();
+            //строим интерфейс
+            Build();
         }
     }
 }

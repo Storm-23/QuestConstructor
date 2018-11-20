@@ -63,6 +63,16 @@ namespace QuestInterviewNS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap control_left {
+            get {
+                object obj = ResourceManager.GetObject("control_left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap control_right {
             get {
                 object obj = ResourceManager.GetObject("control_right", resourceCulture);

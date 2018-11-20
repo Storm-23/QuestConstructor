@@ -76,5 +76,17 @@ namespace QuestCoreNS
             if (clalculator.Calculate(interview.anketa, alt.Condition))
                 yield return alt;
         }
+
+        /// <summary>
+        /// Возврат к предыдущему вопросу
+        /// </summary>
+        public void GoToPrevQuestion()
+        {
+            var prevAnswer = interview.PassedAnswers.Last();
+            interview.anketa.Remove(prevAnswer);
+            interview.PassedAnswers.Remove(prevAnswer);
+            interview.CurrentAnswer = prevAnswer;
+            interview.IsFinished = false;
+        }
     }
 }
